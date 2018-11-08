@@ -1,0 +1,16 @@
+{
+  "name": "node_task_diego",
+  "version": "1.0.0",
+  "description": "A nodejs app, as a task for ReignDesign",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dpalma",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "pug": "^2.0.3",
+    "request": "^2.88.0"
+  }
+}

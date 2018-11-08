@@ -1,0 +1,18 @@
+header.bg-primary {
+  padding: 100px 0 50px;
+  background-color: #495057!important;
+}
+
+section.id.about {
+  padding: 20px 0;
+  border: 1px;
+}
+
+.list-group{
+  font-size: 13pt;
+  color: #333;
+}
+
+body {
+	font-family: Arial;
+}
