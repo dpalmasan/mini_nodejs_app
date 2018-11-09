@@ -18,6 +18,11 @@ var postSchema = new mongoose.Schema({
     type : String,
     required : true
   },
+  show : {
+    type: Boolean,
+    required: true,
+    default: true,
+  }
 });
 
 mongoose.model('Post', postSchema);

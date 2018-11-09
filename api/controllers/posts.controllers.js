@@ -24,3 +24,47 @@ module.exports.postsGetAll = function(req, res) {
     });
 
 };
+
+module.exports.postsUpdateOne = function(req, res) {
+  var postId = req.params.postId;
+
+  console.log('GET postId', postId);
+
+  Post
+    .findById(postId)
+    .exec(function(err, post) {
+      if (err) {
+        console.log("Error finding post");
+        res
+          .status(500)
+          .json(err);
+          return;
+      } else if(!post) {
+        console.log("postId not found in database", postId);
+        res
+          .status(404)
+          .lson({
+            "message" : "Post ID not found " + postId
+          });
+          return;
+      }
+
+      post.show = false;
+
+      post
+        .save(function(err, postUpdated) {
+          if(err) {
+            res
+              .status(500)
+              .json(err);
+          } else {
+            res
+              .status(204)
+              .json();
+          }
+        });
+
+
+    });
+
+};

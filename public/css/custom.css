@@ -16,3 +16,7 @@ section.id.about {
 body {
 	font-family: Arial;
 }
+
+span.author {
+  color:#999;
+}

@@ -5,6 +5,7 @@ html
     link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css')
     link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.5.0/css/all.css", integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU", crossorigin="anonymous")
     link(rel='stylesheet', type="text/css", href='/css/custom.css')
+    script(src='/js/scripts.js', type='text/javascript')
 
   body
     header.bg-primary.text-white
@@ -15,5 +16,9 @@ html
     //a(href=post.url class="list-group-item list-group-item-action" target="_blank") 
     div.list-group
       for post in posts
-          a(href=post.url,class="list-group-item list-group-item-action",target="_blank") #{post.title} - #{post.author} - #{post.pretty_date} <i class="fas fa-trash-alt"></i>
+        if post.show
+          a(href=post.url,id=post.id,class="list-group-item list-group-item-action flex-column align-items-start",target="_blank") 
+            div(class="d-flex w-100 justify-content-between")
+              p #{post.title} <span class="author">- #{post.author} -</span> 
+              p #{post.pretty_date} <i id="#{post.id}" onclick="hide(this.id)" class="fas fa-trash-alt"></i>
           

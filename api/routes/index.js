@@ -7,4 +7,8 @@ router
   .route('/posts')
   .get(ctrlPosts.postsGetAll)
 
+router
+  .route('/posts/:postId')
+  .put(ctrlPosts.postsUpdateOne);
+
 module.exports = router;
