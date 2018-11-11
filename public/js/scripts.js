@@ -15,4 +15,5 @@ const hide = async (id) => {
       'Content-Type': 'application/json'
       }
     });
+    this.event.preventDefault();
 }

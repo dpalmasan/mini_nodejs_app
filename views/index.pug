@@ -19,6 +19,7 @@ html
         if post.show
           a(href=post.url,id=post.id,class="list-group-item list-group-item-action flex-column align-items-start",target="_blank") 
             div(class="d-flex w-100 justify-content-between")
-              p #{post.title} <span class="author">- #{post.author} -</span> 
-              p #{post.pretty_date} <i id="#{post.id}" onclick="hide(this.id)" class="fas fa-trash-alt"></i>
+              p(class="col-sm-9") #{post.title} <span class="author">- #{post.author} -</span> 
+              p(class="col-sm-2") #{post.pretty_date} 
+              p(class="col-sm-1") <i id="#{post.id}" onclick="hide(this.id);" class="fas fa-trash-alt col-sm-2"></i>
           

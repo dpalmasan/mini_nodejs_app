@@ -30,6 +30,7 @@ app.use('/api', routes);
 app.get("/", function (req, res) {
   Post
     .find()
+    .sort({created_at: 'descending'})
     .exec(function(err, posts) {
       console.log(err);
       console.log(posts);
